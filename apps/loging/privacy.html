@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>logING 隐私政策</title>
-    <meta name="description" content="logING 0.2.0 本地版隐私政策。" />
+    <meta name="description" content="logING 0.3.0 联网候选版隐私政策。" />
     <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../../assets/styles.css" />
     <link rel="stylesheet" href="loging.css" />
@@ -31,53 +31,58 @@
 
     <main id="main" class="ml-main">
       <article class="ml-legal">
-        <p class="ml-eyebrow">更新日期：2026年7月15日</p>
+        <p class="ml-eyebrow">更新日期：2026年7月16日</p>
         <h1>logING 隐私政策</h1>
-        <p class="ml-meta">适用版本：logING 0.2.0（Build 2）本地版</p>
+        <p class="ml-meta">适用版本：logING 0.3.0（Build 1）TestFlight Candidate</p>
         <p>
-          logING 由上海晶水济环保科技有限公司运营。本政策说明当前本地版本如何在你的 iPhone 上处理信息。
+          logING 由上海晶水济环保科技有限公司运营。本政策说明 V0.3 联网候选版如何处理账号、私密群组和用户主动上传的内容。
         </p>
 
-        <h2>一、当前版本的隐私边界</h2>
+        <h2>一、账号登录</h2>
         <ul class="ml-list">
-          <li>无需注册或登录账号。</li>
-          <li>不连接业务服务器，不上传视频或日志内容。</li>
-          <li>不展示广告。</li>
-          <li>不包含分析或跟踪 SDK，不进行跨应用跟踪。</li>
-          <li>视频、缩略图、时间轴、偏好设置和生成的成片保存在用户设备中。</li>
+          <li>V0.3 Candidate 允许内部测试者使用邮箱和一次性验证码登录。</li>
+          <li>正式中国 Beta 主登录方式计划为微信和手机号；邮箱仅为测试或备用能力。</li>
+          <li>登录会处理邮箱、用户标识和 Session，但不会自动备份全部个人日志。</li>
+          <li>本候选版不包含广告或第三方分析/跟踪 SDK。</li>
         </ul>
 
-        <h2>二、设备本地处理的数据</h2>
+        <h2>二、个人日志与私密群组</h2>
         <p>
-          当你使用拍摄、提醒、历史记录和本机成片功能时，相关视频、缩略图、拍摄时间、提醒设置和偏好设置会保存在 App 沙盒中。这些内容不会由 logING 自动发送给运营方。
+          个人视频、缩略图、时间轴、提醒和偏好默认保存在 App 沙盒中。只有你在私密群组流程中主动上传的三秒片段才会发送到云端。为提供邀请制群组，我们处理群组名称、成员关系、角色、邀请哈希和片段元数据。
         </p>
 
-        <h2>三、系统权限</h2>
+        <h2>三、视频、缩略图与云服务</h2>
+        <p>
+          Build 1 当前上传视频文件，并通过短期签名地址供有效群成员播放；本机缩略图不会随个人日志自动上传。后续如启用群组云端缩略图，将仅处理对应已上传片段的必要缩略图，并使用相同的私有访问与删除边界。
+        </p>
+        <p>
+          当前 G0 测试后端使用阿里云环境中的托管 RDS Supabase / Private Storage，测试域名为 api-loging-g0.shjingshuiji.cn。Realtime 只触发刷新，客户端同时保留手动、前台和 10～15 秒轮询。
+        </p>
+
+        <h2>四、系统权限</h2>
         <ul class="ml-list">
           <li><strong>摄像头：</strong>用于录制当前小时的三秒视频。</li>
           <li><strong>麦克风：</strong>仅在你选择保留原声时用于录音。</li>
-          <li><strong>通知：</strong>用于在设备本地安排每小时提醒。</li>
+          <li><strong>通知：</strong>用于在设备本地安排提醒；本候选版不使用 APNs。</li>
           <li><strong>相册仅添加：</strong>仅在你主动保存成片时写入系统相册；logING 不读取相册内容。</li>
         </ul>
-        <p>你可以在 iOS“设置”中修改权限。拒绝某项权限只会影响依赖该权限的对应功能。</p>
 
-        <h2>四、保存与分享</h2>
+        <h2>五、保存、撤回与账号注销</h2>
         <p>
-          只有在你主动选择保存时，logING 才会把成片写入系统相册。使用系统分享面板时，由你自行选择接收内容的 App 或服务；内容交付后受接收方的隐私政策约束。
+          本机个人日志保存至用户删除、卸载或系统清理。测试账号、群组关系和云端片段在内部验证、故障排查、删除处理和依法合规所需期限内保存，具体期限须在正式 Beta 前确认。
+        </p>
+        <p>
+          删除本机记录不会自动撤回云端片段。用户可撤回自己上传的片段；撤回后成员不能继续从服务端访问，但其他成员已经保存到相册、设备备份或第三方平台的副本无法远程删除。Build 1 账号注销暂由支持邮箱受理，正式中国 Beta 前必须提供自助入口。
         </p>
 
-        <h2>五、删除与备份</h2>
-        <p>
-          你可以在 App 内删除单个片段、单日或全部本地内容。卸载 App 也可能删除其沙盒数据。当前版本没有服务器备份能力，运营方无法远程恢复已删除或因设备损坏而丢失的视频。
-        </p>
-
-        <h2>六、未成年人保护</h2>
+        <h2>六、安全与未成年人保护</h2>
+        <p>认证、RLS、Private Storage 和短期签名地址共同限制访问。App 不包含 Service Role、数据库密码、短信/微信密钥或阿里云 AccessKey。</p>
         <p>未成年人应在监护人指导下使用本产品，不应拍摄或分享可能暴露本人或他人敏感信息的内容。</p>
 
         <h2>七、联系我们</h2>
         <p>
-          如对本政策或 logING 的本地数据处理方式有疑问，请联系上海晶水济环保科技有限公司：
-          <a href="mailto:support@shjingshuiji.cn">support@shjingshuiji.cn</a>。
+          如有隐私、撤回、注销或删除问题，请联系上海晶水济环保科技有限公司：
+          <a href="mailto:support@shjingshuiji.cn">support@shjingshuiji.cn</a>；开发者邮箱：<a href="mailto:developer@shjingshuiji.cn">developer@shjingshuiji.cn</a>。
         </p>
         <div class="ml-links">
           <a href="./">返回产品页</a>
