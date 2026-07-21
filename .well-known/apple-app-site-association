@@ -1,0 +1,23 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "Z557Y77W3F.com.shjingshuiji.ing",
+        "paths": [
+          "/ing/wechat",
+          "/ing/wechat/",
+          "/ing/wechat/*"
+        ]
+      },
+      {
+        "appID": "Z557Y77W3F.com.shjingshuiji.ing.test",
+        "paths": [
+          "/ing/wechat",
+          "/ing/wechat/",
+          "/ing/wechat/*"
+        ]
+      }
+    ]
+  }
+}

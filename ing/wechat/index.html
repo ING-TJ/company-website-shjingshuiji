@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>正在打开 ING 时刻</title>
+    <meta
+      name="description"
+      content="ING 时刻 Universal Links 回调入口。"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#2458de" />
+    <link rel="icon" href="../assets/ing-app-icon.png" type="image/png" />
+    <link rel="stylesheet" href="../../assets/styles.css" />
+    <style>
+      body {
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        margin: 0;
+        padding: 24px;
+        color: #08142f;
+        background:
+          radial-gradient(circle at 80% 15%, rgba(14, 185, 157, 0.18), transparent 30%),
+          linear-gradient(145deg, #eef3ff, #f8fbfa);
+      }
+
+      .callback-card {
+        width: min(100%, 520px);
+        border: 1px solid #dfe5f1;
+        border-radius: 28px;
+        padding: 42px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 24px 70px rgba(20, 45, 105, 0.13);
+        text-align: center;
+      }
+
+      .callback-card img {
+        width: 92px;
+        height: 92px;
+        margin: 0 auto 24px;
+        border-radius: 22px;
+        box-shadow: 0 16px 34px rgba(29, 75, 183, 0.2);
+      }
+
+      .callback-card h1 {
+        margin: 0;
+        font-size: 30px;
+        line-height: 1.25;
+      }
+
+      .callback-card p {
+        margin: 16px 0 0;
+        color: #526078;
+      }
+
+      .callback-actions {
+        display: grid;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .callback-actions a {
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        padding: 8px 18px;
+        color: #ffffff;
+        background: #08142f;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .callback-actions a:last-child {
+        color: #2458de;
+        background: #eaf0ff;
+      }
+
+      @media (max-width: 520px) {
+        .callback-card {
+          padding: 32px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="callback-card">
+      <img src="../assets/ing-app-icon.png" alt="ING 时刻应用图标" width="92" height="92" />
+      <h1>正在打开 ING 时刻</h1>
+      <p>
+        这是 ING 的安全授权回调地址。如应用未自动打开，可前往 App Store 下载，或返回产品官网。
+      </p>
+      <div class="callback-actions">
+        <a href="https://apps.apple.com/us/app/ing-%E6%97%B6%E5%88%BB/id6785054122">前往 App Store</a>
+        <a href="../">返回 ING 产品首页</a>
+      </div>
+    </main>
+  </body>
+</html>
