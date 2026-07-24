@@ -6,7 +6,7 @@
     <title>ING 时刻隐私政策 | 上海晶水济环保科技有限公司</title>
     <meta
       name="description"
-      content="ING 时刻隐私政策，说明当前版本的数据边界、定位权限用途和联系方式。"
+      content="ING 时刻隐私政策，说明游客模式、登录、账号删除、定位权限和本机数据边界。"
     />
     <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../../assets/styles.css" />
@@ -41,7 +41,7 @@
           <p class="eyebrow">ING Privacy</p>
           <h1>ING 时刻隐私政策</h1>
           <p>
-            本政策说明“ING 时刻”当前版本在使用过程中的数据处理边界、定位权限用途和联系方式。
+            本政策说明“ING 时刻”当前版本的游客模式、登录、账号删除、定位权限和本机数据边界。
           </p>
         </div>
       </section>
@@ -50,36 +50,81 @@
         <div class="container legal-text">
           <p class="section-kicker">适用主体：上海晶水济环保科技有限公司</p>
           <h2 id="ing-privacy-title">当前版本隐私说明</h2>
+          <p>最后更新：2026-07-24</p>
 
-          <h3>一、当前版本特点</h3>
+          <h3>一、游客模式与本机数据</h3>
           <p>
-            ING 时刻当前版本无登录、无广告、无内购、无支付、无后端写入。
-            用户记录主要保存在本机，不将用户个人数据上传到开发者服务器。
+            用户无需登录即可浏览地图、搜索地点和查看地点详情。收藏、浏览历史、最近搜索、
+            现场记录和本机照片默认保存在当前设备；登录不会自动上传这些既有本机数据。
+            当前版本不启用公开动态、媒体上传、云备份或跨设备恢复，也不接入广告、
+            跨应用跟踪或第三方分析 SDK。
           </p>
 
-          <h3>二、本机记录与数据边界</h3>
+          <h3>二、账号与登录</h3>
           <p>
-            当前版本用于浏览附近地点信息、查看地图展示以及在当前设备上保存现场反馈记录。
-            本机保存的记录不会通过开发者服务器进行同步或发布。
+            登录是可选的。用户可以选择中国大陆手机号验证码、微信或“通过 Apple 登录”。
+            三种方式可在完成各自身份验证后绑定到同一个 ING 账号；ING 不会仅凭昵称或邮箱
+            自动合并账号。
+          </p>
+          <ul>
+            <li>手机号用于发送和校验一次性验证码、定位已有账号、保障账号安全和防止滥用；ING 不保存短信验证码。</li>
+            <li>微信登录会将微信返回的一次性授权码和防重放 state 交给 ING 服务端处理；微信 AppSecret 和微信 access token 不存放在 iOS 客户端。</li>
+            <li>Apple 登录会将一次性 identity token、authorization code 和 nonce 交给 ING 服务端校验；这些一次性凭证不写入日志。</li>
+            <li>ING 自有会话凭证保存在 iOS Keychain，用于冷启动恢复、刷新和退出登录。</li>
+          </ul>
+
+          <h3>三、账号数据及用途</h3>
+          <p>
+            为提供登录和账号安全功能，ING 服务端处理账号 ID、经保护的登录身份映射、
+            绑定的登录方式、会话状态、安全与防滥用记录，以及用户主动提供的显示名称。
+            登录身份不会用于广告或跨应用跟踪。
           </p>
 
-          <h3>三、定位权限用途</h3>
+          <h3>四、定位与照片</h3>
           <p>
-            如用户授权定位权限，ING 时刻仅用于判断附近地点与地图展示，
-            不用于追踪用户，不用于广告画像，也不用于将用户位置上传到开发者服务器。
+            位置权限是可选的，仅在用户授权后用于附近地点和地图上下文。ING 不请求“始终”
+            定位，不进行后台持续定位；拒绝权限后仍可浏览地图和搜索地点。用户选择的照片
+            用于本机记录，当前版本不会自动上传这些照片。
           </p>
 
-          <h3>四、第三方服务</h3>
+          <h3>五、第三方服务</h3>
           <p>
-            当前版本不提供广告投放、用户注册登录、内购或支付功能。
-            如后续相关功能发生变化，我们会先更新相关政策说明。
+            账号与基础功能可能使用 Supabase Auth、阿里云短信、微信开放平台、
+            Sign in with Apple、Apple MapKit 和 iOS 系统定位服务。上述服务仅按实现
+            相应功能所需处理数据，并受其适用政策约束。ING 不在客户端保存服务器密钥。
           </p>
 
-          <h3>五、联系我们</h3>
+          <h3>六、账号删除与数据保留</h3>
           <p>
-            如对 ING 时刻隐私政策或数据边界有疑问，请通过
+            已登录用户可前往“我的 → 账号与安全 → 删除账号”，经二次确认后永久删除在线账号。
+            删除流程会清理账号资料、手机号/微信/Apple 身份绑定、服务端会话和属于该账号的
+            服务器文件，并在适用时撤销 Apple 登录令牌。
+          </p>
+          <p>
+            账号删除不会自动删除当前设备上未上传的现场记录、收藏、浏览历史、最近搜索或
+            本机照片。用户可在本机数据管理入口单独处理这些内容。
+          </p>
+
+          <h3>七、安全</h3>
+          <p>
+            ING 对服务端密钥和可撤销凭证采取服务端保存、加密、访问控制、日志脱敏、
+            限流、防重放和短时效校验等措施，互联网传输使用 HTTPS。
+          </p>
+
+          <h3>八、联系我们</h3>
+          <p>
+            如对 ING 时刻隐私政策、账号删除或数据边界有疑问，请通过
             <a href="mailto:ingsupport@163.com">ingsupport@163.com</a>
             联系上海晶水济环保科技有限公司。
+          </p>
+
+          <h3>English summary</h3>
+          <p>
+            Sign-in is optional. Guests can browse maps, search, and place details.
+            Phone OTP, WeChat, and Sign in with Apple can be linked to one ING account.
+            Existing on-device records and photos are not automatically uploaded.
+            Users can permanently delete their online account in My → Account &amp; Security.
+            ING does not use advertising or cross-app tracking.
           </p>
         </div>
       </section>
